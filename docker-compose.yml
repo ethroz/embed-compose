@@ -1,0 +1,23 @@
+services:
+  ollama:
+    image: ollama/ollama:latest
+    ports:
+      - "11434:11434"
+    networks:
+      - embed-network
+
+  embed:
+    build: ../embed
+    image: ethrozee/embedder
+    environment:
+      - REGION=${REGION}
+      - ACCOUNT_ID=${ACCOUNT_ID}
+      - RAGS3_BUCKET=${RAGS3_BUCKET}
+    depends_on:
+      - ollama
+    networks:
+      - embed-network
+
+networks:
+  embed-network:
+    driver: bridge

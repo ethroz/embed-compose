@@ -10,8 +10,8 @@ services:
     build: ../embed
     image: ethrozee/embedder
     environment:
-      - REGION=${REGION}
-      - ACCOUNT_ID=${ACCOUNT_ID}
+      - OLLAMA_HOST=http://ollama:11434
+      - QUEUE_URL=${QUEUE_URL}
       - RAGS3_BUCKET=${RAGS3_BUCKET}
     depends_on:
       - ollama

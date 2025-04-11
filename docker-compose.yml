@@ -12,6 +12,7 @@ services:
     environment:
       - OLLAMA_HOST=http://ollama:11434
       - QUEUE_URL=${QUEUE_URL}
+      - REGION=${REGION}
       - RAGS3_BUCKET=${RAGS3_BUCKET}
     depends_on:
       - ollama

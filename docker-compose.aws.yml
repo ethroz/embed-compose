@@ -1,0 +1,7 @@
+services:
+  embed:
+    logging:
+      driver: awslogs
+      options:
+        awslogs-group: ${LOG_GROUP}
+        awslogs-stream: ${LOG_STREAM}
